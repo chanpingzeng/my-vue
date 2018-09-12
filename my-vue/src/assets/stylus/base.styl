@@ -1,0 +1,38 @@
+*{
+  padding: 0
+  margin: 0
+}
+body, html{
+  font-weight: 200
+  line-height: 1
+} 
+ul{
+  list-style: none
+} 
+.clearfix{
+  display:inline-block
+  &::before, &::after{
+    display:block 
+    content:''
+    line-height:0
+    height:0 
+    clear:both
+    visibility :hidden
+  }
+}
+@media (-webkit-device-pixel-ratio: 1.5),(min-webkit-device-pixel-ratio: 1.5){
+  .border-1px{
+    &::after,&::before{
+      -webkit-transform: scaleY(0.7)
+      transform: scaleY(0.7)
+    }
+  }
+}
+@media (-webkit-device-pixel-ratio: 2),(min-webkit-device-pixel-ratio: 2){
+  .border-1px{
+    &::after,&::before{
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
+    }
+  }
+}
